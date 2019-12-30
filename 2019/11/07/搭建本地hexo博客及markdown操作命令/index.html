@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>搭建本地hexo博客及markdown操作命令 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Liudehan,"> 
+    <meta name="description" content="花费好几个小时，终于搭建hexo博客成功，感谢codesheep的b站教程,liudehan的技术博客，作为一个小白，也是跳了很多坑，在这里记录一下搭建流程和自己进的坑。
+
+一 准备工具
+Git：版,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">搭建本地hexo博客及markdown操作命令</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">搭建本地hexo博客及markdown操作命令</h1>
+        <div class="stuff">
+            <span>十一月 07, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>花费好几个小时，终于搭建hexo博客成功，感谢codesheep的b站教程,<a href="https://liudehan.github.io/" target="_blank" rel="noopener" 我的个人博客"">liudehan的技术博客</a>，作为一个小白，也是跳了很多坑，在这里记录一下搭建流程和自己进的坑。</p>
+<hr>
+<h1 id="一-准备工具"><a href="#一-准备工具" class="headerlink" title="一 准备工具"></a>一 准备工具</h1><ul>
+<li><p><strong>Git</strong>：版本控制器（或者CMD）</p>
+</li>
+<li><p><strong>Node</strong>：提供服务器端JavaScript开发环境</p>
+</li>
+<li><p><strong>GitHub</strong>：需注册一个账号</p>
+</li>
+</ul>
+<p>以上这些直接搜索下载即可，该注册的注册，github绑定的账号密码邮箱都记好，后面搭建过程要用。</p>
+<hr>
+<h1 id="二-hexo安装"><a href="#二-hexo安装" class="headerlink" title="二 hexo安装"></a>二 hexo安装</h1><h2 id="1、安装nodejs和安装git，网站搜索下载，无坑可跳。"><a href="#1、安装nodejs和安装git，网站搜索下载，无坑可跳。" class="headerlink" title="1、安装nodejs和安装git，网站搜索下载，无坑可跳。"></a>1、安装nodejs和安装git，网站搜索下载，无坑可跳。</h2><h2 id="2、git-bash-here或者cmd输入指令，安装hexo。"><a href="#2、git-bash-here或者cmd输入指令，安装hexo。" class="headerlink" title="2、git bash here或者cmd输入指令，安装hexo。"></a>2、git bash here或者cmd输入指令，安装hexo。</h2><p>执行以下代码：<br><code>npm install -g hexo-cli</code><br>注意第一个坑，如果你是用的gitbash,那么你在哪里新建的git就会决定你之后的博客存放位置，记好这个位置，免得之后忘记了。同理,cmd一般都有默认路径，所以如果直接打开cmd执行上面代码，应该会将你的博客放在C：\user下。<br>安装完成后，执行下面代码检验是否安装成功：<br><code>hexo -v</code></p>
+<h2 id="3、进入hexo"><a href="#3、进入hexo" class="headerlink" title="3、进入hexo"></a>3、进入hexo</h2><p>确保你的当前指令是在对应文件夹才能成功进入，如果不对你可以通过以下代码实现上下级文件夹的进入与退出。<br><code>//进入 $ cd yourfile</code><br><code>//退出 $ cd ..\</code><br>完成这一步后你的目标文件夹会新增加很多东西，如下:<br><img src="/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/qwe.jpg" alt></p>
+<h2 id="4、安装hexo服务器"><a href="#4、安装hexo服务器" class="headerlink" title="4、安装hexo服务器"></a>4、安装hexo服务器</h2><p>执行命令:<code>$ npm install hexo-server --save</code><br>这样安装好hexo服务器以后，我们就可以启动服务器了。执行命令<code>$ hexo server</code>，然后在浏览器输入网址<a href="http://127.0.0.1:4000/" target="_blank" rel="noopener">http://127.0.0.1:4000/</a> ,就可以正常访问了</p>
+<h1 id="三-markdown常用功能（学习from小马视频）"><a href="#三-markdown常用功能（学习from小马视频）" class="headerlink" title="三 markdown常用功能（学习from小马视频）"></a>三 markdown常用功能（学习from小马视频）</h1><ul>
+<li><strong>标题</strong>：使用#，#越多代表标题等级越低。</li>
+<li><strong>加粗</strong>：前后都加两颗*。</li>
+<li><strong>分割线</strong>：使用三颗星***或者三个下划线- - -。</li>
+<li><strong>引用</strong>：&gt;（注意要换行）。</li>
+<li><strong>添加图片</strong>：<code>[！[alt文字](图片链接 &quot;&quot;)]</code>(这里填链接的网址),只有引号前需要空格。对于本地图片采用以下方法。</li>
+</ul>
+<ol>
+<li>将图片置于md文件所在的目录下，直接<code>![](pic_name.jpg)</code>即可。（或者在md文件所在目录下建立pic文件夹，<code>![](pic/pic_name.jpg)</code>）</li>
+<li>网上的图片直接在新标签打开图片，复制地址框即为图片地址。</li>
+</ol>
+<ul>
+<li><p><strong>换行</strong>：空一行就行</p>
+</li>
+<li><p><strong>列表</strong> ：*加空格或者-加空格，直接空格就可以缩进，如果直接使用数字，就会生成有序的，如1加空格。<br><img src="/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/rty.jpg" alt></p>
+</li>
+<li><p><strong>超链接</strong>：[你想显示的名称] (网址”鼠标移动到上面的解释”)，中间没有空格。</p>
+</li>
+<li><p><strong>添加代码</strong>：两个反的点`</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

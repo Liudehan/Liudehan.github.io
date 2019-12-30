@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JAVA封装中构造方法与setget - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Liudehan,"> 
+    <meta name="description" content="构造方法
+内容来源于百度百科构造方法是一种特殊的成员方法,它的特殊性反映在如下几个方面:
+
+
+构造方法作用：（1）.构造出来一个类的实例 （2）.对构造出来个一个类的实例（对象）初始化。
+构造方法的,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">JAVA封装中构造方法与setget</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JAVA封装中构造方法与setget</h1>
+        <div class="stuff">
+            <span>十一月 09, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ul>
+<li>内容来源于百度百科<br>构造方法是一种特殊的成员方法,它的特殊性反映在如下几个方面:</li>
+</ul>
+<ol>
+<li>构造方法作用：（1）.构造出来一个类的实例 （2）.对构造出来个一个类的实例（对象）初始化。</li>
+<li><strong>构造方法的名字必须与定义他的类名完全相同，没有返回类型，甚至连void也没有。</strong></li>
+<li>主要完成对象的初始化工作，构造方法的调用是在创建一个对象时使用new操作进行的。</li>
+<li>类中必定有构造方法，若不写，系统自动添加无参构造方法。接口不允许被实例化，所以接口中没有构造方法。</li>
+<li>不能被static、final、synchronized、abstract和native修饰。</li>
+<li>构造方法在初始化对象时自动执行,一般不能显式地直接调用.当同一个类存在多个构造方法时，java编译系统会自动按照初始化时最后面括号的参数个数以及参数类型来自动一一对应。完成构造函数的调用。</li>
+<li>构造方法分为两种：无参构造方法 有参构造方法<br>构造方法可以被重载。没有参数的构造方法称为默认构造方法，与一般的方法一样，构造方法可以进行任何活动，但是经常将他设计为进行各种初始化活动，比如初始化对象的属性。</li>
+<li>构造代码块：</li>
+</ol>
+<ul>
+<li>作用：给对象进行初始化，对象一建立就执行，而且优先于构造函数执行</li>
+<li>构造代码块和构造函数的区别：<br>　　构造代码块是给所有不同对象的共性进行统一初始化，构造函数是给对应的对象进行初始化</li>
+</ul>
+<ol start="9">
+<li>子类继承父类中，</li>
+</ol>
+<ul>
+<li>子类的实例化过程</li>
+<li><strong>构造方法不能被子类继承</strong>  </li>
+<li>子类创建对象时，会先去创建父类的对象。</li>
+<li>默认是去调用父类的无参构造方法。</li>
+<li>子类构造方法中，第一行默认是super()</li>
+<li>为什么子类中第一行会默认有super()</li>
+<li>因为他继承父类的成员使用，使用前这些成员必须初始化，</li>
+<li>而他们是父类的成员，所以，必须通过父类进行初始化。</li>
+<li>所以，会先创建一个父类的对象。</li>
+<li>当父类没有无参构造方法时<br>必须使用this或者super调用其他的构造方法。</li>
+</ul>
+<p>10.自定义类中，如果不写构造方法，java系统会默认添加一个无参的构造方法。如果写了一个有参的构造方法，就一定要写无参构造方法。<br>如果想使用无参的构造方法，就必须手动给出无参构造方法。<br>建议：一般情况下，我们自定义的类都要手动给出无参构造方法。<br>　计算长方形面积例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class RectConstructor &#123;</span><br><span class="line">	double length;</span><br><span class="line">	double width; </span><br><span class="line">	double area()&#123;</span><br><span class="line">	return length*width;</span><br><span class="line">	&#125;</span><br><span class="line">	RectConstructor(double width,double length)&#123;//带参数的构造方法</span><br><span class="line">	this.length=length;</span><br><span class="line">	this.width=width;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class CalRecleArea &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		RectConstructor rect1=new RectConstructor(10,20);</span><br><span class="line">		RectConstructor rect2=new RectConstructor(3,6);</span><br><span class="line">		double ar;</span><br><span class="line">		ar=rect1.area();</span><br><span class="line">		System.out.println(&quot;第一个长方形的面积是&quot;+ar);</span><br><span class="line">		ar=rect2.area();</span><br><span class="line">		System.out.println(&quot;第二个长方形的面积是&quot;+ar);</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="getter-setter"><a href="#getter-setter" class="headerlink" title="getter/setter"></a>getter/setter</h1><ul>
+<li>本贴来源CSDN博主「zyuyuyuy」</li>
+</ul>
+<p>首先要知道封装：访问修饰符和封装关系密切，访问修饰符从访问的范围由小及大依次是：<br>private  default（当什么都不写默认就是这个）   protected   public<br>访问修饰符的作用：可以修饰类、接口、属性和方法。通常可以通过访问修饰符来改变所修饰对象的可访问范围。<br>private私有化成员属性，提供公开public的getter/setter,保证代码的安全，同时也可以提升数据的安全性,隐藏内部实现细节.<br>Setter:赋值, Getter:取值</p>
+<p>贴上一段代码：</p>
+<figure class="highlight plain"><figcaption><span>java.util.Scanner;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Stutent1&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line"></span><br><span class="line">			this.age = age;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	public void showStu1()&#123;</span><br><span class="line">		System.out.println(&quot;学生叫做&quot;+name+&quot;,年龄&quot;+age);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Stutent1Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner input=new Scanner(System.in);</span><br><span class="line">		Stutent1 stutent1=new Stutent1();</span><br><span class="line">		System.out.println(&quot;请输入姓名&quot;);</span><br><span class="line">		stutent1.setName(input.next());</span><br><span class="line">		System.out.println(&quot;请输入年龄&quot;);</span><br><span class="line">		stutent1.setAge(input.nextInt());</span><br><span class="line">		stutent1.showStu1();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br></pre></td></tr></table></figure>
+<p>版权声明：本文为CSDN博主「zyuyuyuy」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/qq_42601698/article/details/81294901" target="_blank" rel="noopener">https://blog.csdn.net/qq_42601698/article/details/81294901</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
