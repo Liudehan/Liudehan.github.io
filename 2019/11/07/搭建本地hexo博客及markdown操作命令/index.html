@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>搭建本地hexo博客及markdown操作命令 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="花费好几个小时，终于搭建hexo博客成功，感谢codesheep的b站教程,liudehan的技术博客，作为一个小白，也是跳了很多坑，在这里记录一下搭建流程和自己进的坑。  一 准备工具 Git：版本控制器（或者CMD）  Node：提供服务器端JavaScript开发环境  GitHub：需注册一个账号   以上这些直接搜索下载即可，该注册的注册，github绑定的账号密码邮箱都记好，后面搭建过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建本地hexo博客及markdown操作命令">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="花费好几个小时，终于搭建hexo博客成功，感谢codesheep的b站教程,liudehan的技术博客，作为一个小白，也是跳了很多坑，在这里记录一下搭建流程和自己进的坑。  一 准备工具 Git：版本控制器（或者CMD）  Node：提供服务器端JavaScript开发环境  GitHub：需注册一个账号   以上这些直接搜索下载即可，该注册的注册，github绑定的账号密码邮箱都记好，后面搭建过">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4&#x2F;qwe.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4&#x2F;rty.jpg">
+<meta property="og:updated_time" content="2019-11-24T13:14:57.301Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4&#x2F;qwe.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-搭建本地hexo博客及markdown操作命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2019-11-07T11:59:36.000Z" itemprop="datePublished">2019-11-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建本地hexo博客及markdown操作命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>花费好几个小时，终于搭建hexo博客成功，感谢codesheep的b站教程,<a href="https://liudehan.github.io/" target="_blank" rel="noopener" 我的个人博客"">liudehan的技术博客</a>，作为一个小白，也是跳了很多坑，在这里记录一下搭建流程和自己进的坑。</p>
+<hr>
+<h1 id="一-准备工具"><a href="#一-准备工具" class="headerlink" title="一 准备工具"></a>一 准备工具</h1><ul>
+<li><p><strong>Git</strong>：版本控制器（或者CMD）</p>
+</li>
+<li><p><strong>Node</strong>：提供服务器端JavaScript开发环境</p>
+</li>
+<li><p><strong>GitHub</strong>：需注册一个账号</p>
+</li>
+</ul>
+<p>以上这些直接搜索下载即可，该注册的注册，github绑定的账号密码邮箱都记好，后面搭建过程要用。</p>
+<hr>
+<h1 id="二-hexo安装"><a href="#二-hexo安装" class="headerlink" title="二 hexo安装"></a>二 hexo安装</h1><h2 id="1、安装nodejs和安装git，网站搜索下载，无坑可跳。"><a href="#1、安装nodejs和安装git，网站搜索下载，无坑可跳。" class="headerlink" title="1、安装nodejs和安装git，网站搜索下载，无坑可跳。"></a>1、安装nodejs和安装git，网站搜索下载，无坑可跳。</h2><h2 id="2、git-bash-here或者cmd输入指令，安装hexo。"><a href="#2、git-bash-here或者cmd输入指令，安装hexo。" class="headerlink" title="2、git bash here或者cmd输入指令，安装hexo。"></a>2、git bash here或者cmd输入指令，安装hexo。</h2><p>执行以下代码：<br><code>npm install -g hexo-cli</code><br>注意第一个坑，如果你是用的gitbash,那么你在哪里新建的git就会决定你之后的博客存放位置，记好这个位置，免得之后忘记了。同理,cmd一般都有默认路径，所以如果直接打开cmd执行上面代码，应该会将你的博客放在C：\user下。<br>安装完成后，执行下面代码检验是否安装成功：<br><code>hexo -v</code></p>
+<h2 id="3、进入hexo"><a href="#3、进入hexo" class="headerlink" title="3、进入hexo"></a>3、进入hexo</h2><p>确保你的当前指令是在对应文件夹才能成功进入，如果不对你可以通过以下代码实现上下级文件夹的进入与退出。<br><code>//进入 $ cd yourfile</code><br><code>//退出 $ cd ..\</code><br>完成这一步后你的目标文件夹会新增加很多东西，如下:<br><img src="/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/qwe.jpg" alt></p>
+<h2 id="4、安装hexo服务器"><a href="#4、安装hexo服务器" class="headerlink" title="4、安装hexo服务器"></a>4、安装hexo服务器</h2><p>执行命令:<code>$ npm install hexo-server --save</code><br>这样安装好hexo服务器以后，我们就可以启动服务器了。执行命令<code>$ hexo server</code>，然后在浏览器输入网址<a href="http://127.0.0.1:4000/" target="_blank" rel="noopener">http://127.0.0.1:4000/</a> ,就可以正常访问了</p>
+<h1 id="三-markdown常用功能（学习from小马视频）"><a href="#三-markdown常用功能（学习from小马视频）" class="headerlink" title="三 markdown常用功能（学习from小马视频）"></a>三 markdown常用功能（学习from小马视频）</h1><ul>
+<li><strong>标题</strong>：使用#，#越多代表标题等级越低。</li>
+<li><strong>加粗</strong>：前后都加两颗*。</li>
+<li><strong>分割线</strong>：使用三颗星***或者三个下划线- - -。</li>
+<li><strong>引用</strong>：&gt;（注意要换行）。</li>
+<li><strong>添加图片</strong>：<code>[！[alt文字](图片链接 &quot;&quot;)]</code>(这里填链接的网址),只有引号前需要空格。对于本地图片采用以下方法。</li>
+</ul>
+<ol>
+<li>将图片置于md文件所在的目录下，直接<code>![](pic_name.jpg)</code>即可。（或者在md文件所在目录下建立pic文件夹，<code>![](pic/pic_name.jpg)</code>）</li>
+<li>网上的图片直接在新标签打开图片，复制地址框即为图片地址。</li>
+</ol>
+<ul>
+<li><p><strong>换行</strong>：空一行就行</p>
+</li>
+<li><p><strong>列表</strong> ：*加空格或者-加空格，直接空格就可以缩进，如果直接使用数字，就会生成有序的，如1加空格。<br><img src="/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/rty.jpg" alt></p>
+</li>
+<li><p><strong>超链接</strong>：[你想显示的名称] (网址”鼠标移动到上面的解释”)，中间没有空格。</p>
+</li>
+<li><p><strong>添加代码</strong>：两个反的点`</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/07/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E5%8F%8Amarkdown%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" data-id="ck68smg9d000650vafq3wgz7u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/09/JAVA%E5%B0%81%E8%A3%85%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E4%B8%8Esetget/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JAVA封装中构造方法与setget
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA-OO/">JAVA OO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA%E8%BF%9B%E9%98%B6/">JAVA进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/05/%E9%93%BE%E8%A1%A8%EF%BC%8C%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97/">链表，链表实现的栈、队列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E3%80%81%E6%95%B0%E7%BB%84%E6%9E%84%E6%88%90%E7%9A%84%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97/">数据结构-数组、数组构成的栈、队列</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/30/intelliJ%20Idea%E5%AE%89%E8%A3%85%E4%B8%8E%E5%A4%96%E9%83%A8%E7%B1%BB%E5%BA%93%E5%AF%BC%E5%85%A5/">intelliJ Idea安装与外部类库导入</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/27/static%E9%9D%99%E6%80%81%E3%80%81%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E3%80%81%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E3%80%81%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">static静态、参数传递、单例模式、工厂模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/17/Calendar%E6%97%A5%E5%8E%86%E4%B8%8EString-format%E7%9A%84%E7%94%A8%E6%B3%95/">Calendar日历与String.format的用法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
